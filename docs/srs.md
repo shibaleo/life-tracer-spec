@@ -17,7 +17,6 @@ LIFE TRACER is a personal self-tracking tool that:
 
 ### 1.3 References
 - ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processes — Requirements engineering
-- Project notes on one-minute activity logging
 
 ### 1.4 Definitions, Acronyms, and Abbreviations
 | Term             | Definition                                                                 |
@@ -38,7 +37,7 @@ LIFE TRACER is a personal self-tracking tool that:
 | FR-001         | Record daily activities in one-minute increments.    | High (MVP)  |
 | FR-002         | Automatically aggregate logged data.                 | High        |
 | FR-003         | Provide dashboards and visual summaries.             | High        |
-| FR-004         | Generate and export PDF reports (LaTeX → Cloud).     | Medium      |
+| FR-004         | Generate and export PDF reports (LaTeX → Google Drive).     | Medium      |
 
 ---
 
@@ -56,11 +55,11 @@ LIFE TRACER is a personal self-tracking tool that:
 
 ### 4.1 User Interfaces
 - No custom UI development.
-- Data entry via Toggl (time logs), Notion/Coda (memos), dashboards via Grafana.
-- PDF report export via LaTeX templates compiled in cloud and uploaded to Google Cloud Storage.
+- Data entry via Toggl/Google calendar (time plan/logs), Notion/Coda (memos), dashboards via Grafana.
+- PDF report export via LaTeX templates compiled in cloud and uploaded to Google Drive.
 
 ### 4.2 APIs / External Services
-- Toggl Track (time logging), Supabase (backend), Grafana Cloud (dashboards), Notion/Coda (notes).
+- Google Calendar (plans), Toggl Track (time logging), Supabase (backend), Grafana Cloud (dashboards), Notion/Coda (notes).
 - Authentication via OAuth2 or API keys.
 - No public API provided by LIFE TRACER (initial release).
 
@@ -93,7 +92,7 @@ A3. HTTPS mandatory; at-rest encryption depends on Supabase.
 A4. Single-user scope; multi-user features are out of scope.
 
 **Q5. How are PDF reports protected?**
-A5. Uploaded to Google Cloud Storage as private; sharing controlled by user.
+A5. Uploaded to Google Drive as private; sharing controlled by user.
 
 **Q6. Are logs or audit trails maintained?**
 A6. Not in initial release; optional simple logs may be stored.
@@ -106,7 +105,7 @@ A7. Follow recommendations from external service providers.
 ## 6. Traceability Matrix (Draft)
 
 | Requirement ID | Linked RDD Goal / Use Case          | Test Case (TBD) |
-| -------------- | ---------------------------------- | --------------- |
+| -------------- | ----------------------------------- | --------------- |
 | FR-001         | UC1: Log daily activities           | TBD             |
 | FR-002         | UC2: Auto-aggregate data            | TBD             |
 | FR-003         | UC3: View dashboards                | TBD             |
